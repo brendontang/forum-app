@@ -14,12 +14,12 @@ require('./config/passport')(passport);
 const db = 'mongodb+srv://test:test123@cluster0-2bkx0.mongodb.net/test?retryWrites=true'
 
 // Connect to 
-mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
-    .then(() => console.log('MongoDB Connected... '))
-    .catch(err => console.log(err));
-// mongoose.connect(db, { useNewUrlParser: true })
+// mongoose.connect('mongodb://localhost:27017/test', { useNewUrlParser: true })
 //     .then(() => console.log('MongoDB Connected... '))
 //     .catch(err => console.log(err));
+mongoose.connect(db, { useNewUrlParser: true })
+    .then(() => console.log('MongoDB Connected... '))
+    .catch(err => console.log(err));
 
 // EJS 
 app.use(expressLayouts);
